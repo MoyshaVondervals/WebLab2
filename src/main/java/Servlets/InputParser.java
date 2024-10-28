@@ -1,8 +1,7 @@
-package com.example.web2t;
+package Servlets;
 
 
 
-import jakarta.json.JsonObject;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.BufferedReader;

@@ -1,4 +1,4 @@
-package com.example.web2t.Points;
+package Points;
 
 public class Point {
     private float x;
@@ -47,7 +47,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "com.example.web2t.Points.Point{" +
+        return "Points.Point{" +
                 "x=" + x +
                 ", y=" + y +
                 ", r=" + r +

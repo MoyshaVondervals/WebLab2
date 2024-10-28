@@ -1,9 +1,9 @@
-package com.example.web2t;
+package Servlets;
 
 import java.io.*;
 
-import com.example.web2t.Points.Point;
-import com.example.web2t.Points.PointManager;
+import Points.Point;
+import Points.PointManager;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -15,7 +15,7 @@ public class AreaCheckServlet extends HttpServlet {
     float inputY;
     float inputR;
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
 
             inputX = Float.parseFloat(request.getParameter("x"));
@@ -37,10 +37,11 @@ public class AreaCheckServlet extends HttpServlet {
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/result.jsp");
-        dispatcher.forward(request, response);
-
-
-
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            errorHandler(response);
+        }
 
 
     }
@@ -48,15 +49,21 @@ public class AreaCheckServlet extends HttpServlet {
         System.err.println("ERROR KAPUT 2");
     }
     public boolean checkRectangle(float x, float y, float r) {
-        return ((-r/2 <= x)&&(x <= 0) && ((-r <= y) && (y<=0)));
+        return ((-r <= x)&&(x <= 0) && ((-r <= y) && (y<=0)));
     }
     public boolean checkTriangle(float x, float y, float r) {
         return ((0 <= x && x <= r) && (-r/2 <= y && y <=0) && y >= (x / 2) - r / 2);
     }
     public boolean checkCircle(float x, float y, float r) {
-        return ((-r/2<=x && x<=0) && (0<=y && y<=r) && Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r, 2));
+        return ((-r<=x && x<=0) && (0<=y && y<=r) && Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r, 2));
     }
     public boolean checkAreas(float x, float y, float r){
         return checkRectangle(x, y, r) || checkTriangle(x, y, r) || checkCircle(x, y, r);
+    }
+    public void errorHandler(HttpServletResponse response) throws IOException {
+        System.err.println("ERROR: Servlet exception");
+        response.setContentType("text/html; charset=utf-8");
+        response.getWriter().write("ERROR: Servlet exception");
+        response.setStatus(422);
     }
 }

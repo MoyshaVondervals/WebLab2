@@ -1,4 +1,4 @@
-package com.example.web2t;
+package Servlets;
 
 import java.io.*;
 

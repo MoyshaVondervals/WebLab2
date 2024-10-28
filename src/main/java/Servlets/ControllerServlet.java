@@ -1,9 +1,8 @@
-package com.example.web2t;
+package Servlets;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import jakarta.json.JsonObject;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -19,29 +18,31 @@ public class ControllerServlet extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         try {
-
             inputX = Float.parseFloat(request.getParameter("x"));
             inputY = Float.parseFloat(request.getParameter("y"));
             inputR = Float.parseFloat(request.getParameter("r"));
             System.err.println("MSG:  X"+inputX+" Y"+inputY+" R"+inputR);
 
         } catch (Exception e) {
-            errorHandler();
+            errorHandler(response);
         }
-        if (-4<=inputX&&inputX<=4){
-            errorHandler();
+        if (inputX < -4 || inputX > 4) {
+            errorHandler(response);
         }
-        if (inputY<-5&& inputY>3){
-            errorHandler();
+        if (inputY<=-5|| inputY>=3){
+            errorHandler(response);
         }
         if (!possibleR.contains(inputR)){
-            errorHandler();
+            errorHandler(response);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("/AreaCheckServlet");
         dispatcher.forward(request, response);
     }
-    public void errorHandler(){
-        System.err.println("ERROR KAPUT");
+    public void errorHandler(HttpServletResponse response) throws IOException {
+        System.err.println("ERROR: invalid input");
+        response.setContentType("text/html; charset=utf-8");
+        response.getWriter().write("ERROR: invalid input! x:" + inputX + " y:" + inputY+ " r:" + inputR);
+        response.setStatus(422);
     }
 
 }

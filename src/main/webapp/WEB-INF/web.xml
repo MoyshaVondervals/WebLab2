@@ -5,7 +5,7 @@
          version="6.0">
     <servlet>
         <servlet-name>ControllerServlet</servlet-name>
-        <servlet-class>com.example.web2t.ControllerServlet</servlet-class>
+        <servlet-class>Servlets.ControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
@@ -13,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>AreaCheckServlet</servlet-name>
-        <servlet-class>com.example.web2t.AreaCheckServlet</servlet-class>
+        <servlet-class>Servlets.AreaCheckServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AreaCheckServlet</servlet-name>

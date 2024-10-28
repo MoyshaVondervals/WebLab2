@@ -1,14 +1,15 @@
-package com.example.web2t.Points;
+package Points;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class PointManager {
+public class PointManager implements Serializable {
     LinkedList<Point> pointLinkedList = new LinkedList<>();
     public void addPoint(Point point) {
         if (pointLinkedList.size()<10){
             pointLinkedList.add(point);
         }else{
-            pointLinkedList.removeLast();
+            pointLinkedList.removeFirst();
             pointLinkedList.add(point);
         }
     }

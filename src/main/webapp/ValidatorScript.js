@@ -46,9 +46,9 @@ async function sendRequest(Xvalue, Yvalue, Rvalue) {
 
     Object.entries(data).forEach(([key, value]) => {
         const input = document.createElement("input");
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
+        input.name = key
+        input.value = value
+        form.appendChild(input)
     });
     document.body.appendChild(form);
     form.submit();
@@ -107,6 +107,5 @@ function pointTranslator(x, y){
     const Rvalue = document.querySelector('input[name="Rvalue"]:checked').value;
     kx = (x-150)/100*Rvalue
     ky = -(y-150)/100*Rvalue
-    console.log(`x: ${kx}  y: ${ky}`);
     validateXYR(kx, ky, Rvalue);
 }
