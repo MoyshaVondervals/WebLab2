@@ -14,7 +14,7 @@ ENV PATH="${JBOSS_HOME}/bin:${PATH}"
 ENV WILDFLY_USER=moysha
 ENV WILDFLY_PASSWORD=Aboba1488
 
-COPY --from=build /app/target/web2.war ${JBOSS_HOME}/standalone/deployments/
+COPY --from=build /app/target/web2t-1.0-SNAPSHOT.war ${JBOSS_HOME}/standalone/deployments/
 
 RUN chmod +x ${JBOSS_HOME}/bin/add-user.sh
 
