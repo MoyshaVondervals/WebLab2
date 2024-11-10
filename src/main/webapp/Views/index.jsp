@@ -17,7 +17,6 @@
 </head>
 
 <body>
-<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
 <jsp:include page="Header.jsp"/>
 
 <div class="container">

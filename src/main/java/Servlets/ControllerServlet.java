@@ -35,6 +35,7 @@ public class ControllerServlet extends HttpServlet{
         if (!possibleR.contains(inputR)){
             errorHandler(response);
         }
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/AreaCheckServlet");
         dispatcher.forward(request, response);
     }

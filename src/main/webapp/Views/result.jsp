@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
 
 <jsp:include page="Header.jsp"/>
 
@@ -38,10 +38,10 @@
 
         <div class = "box-6">
             <p>Последний запрос</p>
-            <% if(pointDAO !=null){%>
-            <p><%="X:"+ pointDAO.getPointLinkedList().getLast().getX()
-            +"  Y:"+ pointDAO.getPointLinkedList().getLast().getY()
-            +"  R:"+ pointDAO.getPointLinkedList().getLast().getR()%></p>
+            <% if(pointManager !=null){%>
+            <p><%="X:"+ pointManager.getPointLinkedList().getLast().getCoordinates().getX()
+            +"  Y:"+ pointManager.getPointLinkedList().getLast().getCoordinates().getY()
+            +"  R:"+ pointManager.getPointLinkedList().getLast().getCoordinates().getR()%></p>
             <%}%>
         </div>
     </div>

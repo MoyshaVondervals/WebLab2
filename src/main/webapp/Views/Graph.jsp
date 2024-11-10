@@ -8,7 +8,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
 <svg height="300" width="300">
   <!-- shapes-->
   <rect x="50" y="150" width="100" height="100" class="geometryShape"></rect>
@@ -50,12 +50,12 @@
   <text fill="black" x="160" y="105" font-size="12">R/2</text>
   <text fill="black" x="160" y="205" font-size="12">-R/2</text>
   <text fill="black" x="160" y="255" font-size="12">-R</text>
-  <%if (pointDAO !=null){
-    for(Point point : pointDAO.getPointLinkedList()){
-      int x = (int)( point.getX()/point.getR()*100)+150;
-      int y = (int) (-point.getY()/ point.getR()*100)+150;
+  <%if (pointManager !=null){
+    for(Point point : pointManager.getPointLinkedList()){
+      int x = (int)( point.getCoordinates().getX()/point.getCoordinates().getR()*100)+150;
+      int y = (int) (-point.getCoordinates().getY()/ point.getCoordinates().getR()*100)+150;
   %>
-  <circle cx=<%=x%> cy=<%=y%> r=4 fill=<%=pointDAO.colorDot(point.isStatus())%> stroke-width=1 stroke="white" />
+  <circle cx=<%=x%> cy=<%=y%> r=4 fill=<%=pointManager.colorDot(point.isStatus())%> stroke-width=1 stroke="white" />
   <%}
   }%>
 

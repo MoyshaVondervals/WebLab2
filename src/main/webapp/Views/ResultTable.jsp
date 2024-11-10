@@ -9,7 +9,7 @@
 <%@ page import="Managers.PointManager" %>
 <%@ page import="Managers.PointManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
 <table>
   <thead>
   <tr>
@@ -18,13 +18,13 @@
     <td>R value</td>
     <td>Result</td>
   </tr>
-  <%if (pointDAO !=null){
-    for(Point point : pointDAO.getPointLinkedList()){
+  <%if (pointManager !=null){
+    for(Point point : pointManager.getPointLinkedList()){
   %>
   <tr>
-    <td><%=point.getX()%></td>
-    <td><%=point.getY()%></td>
-    <td><%=point.getR()%></td>
+    <td><%=point.getCoordinates().getX()%></td>
+    <td><%=point.getCoordinates().getY()%></td>
+    <td><%=point.getCoordinates().getR()%></td>
     <td><%=point.isStatus()%></td>
   </tr>
   <%}

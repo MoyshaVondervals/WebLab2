@@ -1,40 +1,20 @@
 package Models;
 
 public class Point {
-    private float x;
-    private float y;
-    private float r;
+    private Coordinates coordinates;
     private boolean status;
 
-    public Point(float x, float y, float r, boolean status) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
+    public Point(Coordinates coordinates, boolean status) {
+        this.coordinates = coordinates;
         this.status = status;
     }
 
-    public float getX() {
-        return x;
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public float getR() {
-        return r;
-    }
-
-    public void setR(float r) {
-        this.r = r;
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
     public boolean isStatus() {
@@ -47,10 +27,8 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Models.Point{" +
-                "x=" + x +
-                ", y=" + y +
-                ", r=" + r +
+        return "Point{" +
+                "coordinates=" + coordinates +
                 ", status=" + status +
                 '}';
     }
