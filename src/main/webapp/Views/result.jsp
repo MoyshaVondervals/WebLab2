@@ -1,5 +1,6 @@
-<%@ page import="Points.Point" %>
-<%@ page import="Points.PointManager" %>
+<%@ page import="Models.Point" %>
+<%@ page import="Managers.PointManager" %>
+<%@ page import="Managers.PointManager" %>
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
 </head>
 
 <body>
-<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
 
 <jsp:include page="Header.jsp"/>
 
@@ -37,10 +38,10 @@
 
         <div class = "box-6">
             <p>Последний запрос</p>
-            <% if(pointManager!=null){%>
-            <p><%="X:"+pointManager.getPointLinkedList().getLast().getX()
-            +"  Y:"+pointManager.getPointLinkedList().getLast().getY()
-            +"  R:"+pointManager.getPointLinkedList().getLast().getR()%></p>
+            <% if(pointDAO !=null){%>
+            <p><%="X:"+ pointDAO.getPointLinkedList().getLast().getX()
+            +"  Y:"+ pointDAO.getPointLinkedList().getLast().getY()
+            +"  R:"+ pointDAO.getPointLinkedList().getLast().getR()%></p>
             <%}%>
         </div>
     </div>

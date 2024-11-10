@@ -1,5 +1,6 @@
-<%@ page import="Points.PointManager" %>
-<%@ page import="Points.Point" %>
+<%@ page import="Managers.PointManager" %>
+<%@ page import="Models.Point" %>
+<%@ page import="Managers.PointManager" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 
@@ -16,12 +17,12 @@
 </head>
 
 <body>
-<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
 <jsp:include page="Header.jsp"/>
 
 <div class="container">
     <form id = "form">
-        <!--  <form>-->
+
         <div class="box-1">
             <jsp:include page="Xform.jsp"/>
         </div>

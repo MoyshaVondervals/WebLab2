@@ -1,4 +1,4 @@
-let tableSize = 0;
+
 const possibleR = [1, 1.5, 2, 2.5, 3];
 
 function validateX(Xvalue) {
@@ -42,7 +42,7 @@ async function sendRequest(Xvalue, Yvalue, Rvalue) {
     }
     const form = document.createElement("form");
     form.method = "POST";
-    form.action = "/web2t-1.0-SNAPSHOT/ControllerServlet"; // Укажите URL вашего сервлета
+    form.action = "/web2t-1.0-SNAPSHOT/ControllerServlet";
 
     Object.entries(data).forEach(([key, value]) => {
         const input = document.createElement("input");
@@ -54,46 +54,7 @@ async function sendRequest(Xvalue, Yvalue, Rvalue) {
     form.submit();
 
 
-
-    // const url = `/web2t-1.0-SNAPSHOT/ControllerServlet`;
-    // console.log(url)
-
-
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body:JSON.stringify({
-    //         x: Xvalue,
-    //         y: Yvalue,
-    //         r: Rvalue
-    //     })
-    // })
-    //
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log(data.Etime);
-    //         resultTable(data, Xvalue, Yvalue, Rvalue);
-    //     })
-    //     .catch(() => dialog('red', 'Ошибка на сервере'));
 }
-
-// function resultTable(data, Xvalue, Yvalue, Rvalue) {
-//     const tableBody = document.getElementById('resultTableBody');
-//     const row = tableBody.insertRow(tableSize);
-//
-//     if (tableSize < 10) {
-//         tableSize += 1;
-//     } else {
-//         document.getElementById('resultTableBody').deleteRow(tableSize - 10);
-//     }
-//
-//     row.insertCell().innerHTML = Xvalue;
-//     row.insertCell().innerHTML = Yvalue;
-//     row.insertCell().innerHTML = Rvalue;
-//     row.insertCell().innerHTML = data.Status;
-//     row.insertCell().innerHTML = data.Etime;
-//     row.insertCell().innerHTML = data.Ctime;
-// }
 
 function svgMousePosition(){
 

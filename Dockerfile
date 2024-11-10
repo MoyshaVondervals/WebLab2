@@ -7,6 +7,7 @@ RUN mvn dependency:go-offline
 COPY src /app/src
 RUN mvn clean package
 
+
 FROM quay.io/wildfly/wildfly:latest-jdk19
 
 ENV JBOSS_HOME=/opt/jboss/wildfly

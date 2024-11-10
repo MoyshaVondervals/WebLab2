@@ -21,7 +21,7 @@ public class ControllerServlet extends HttpServlet{
             inputX = Float.parseFloat(request.getParameter("x"));
             inputY = Float.parseFloat(request.getParameter("y"));
             inputR = Float.parseFloat(request.getParameter("r"));
-            System.err.println("MSG:  X"+inputX+" Y"+inputY+" R"+inputR);
+            System.err.println("ControllerServlet msg:  X"+inputX+" Y"+inputY+" R"+inputR);
 
         } catch (Exception e) {
             errorHandler(response);

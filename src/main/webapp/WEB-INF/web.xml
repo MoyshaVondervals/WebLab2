@@ -19,7 +19,9 @@
         <servlet-name>AreaCheckServlet</servlet-name>
         <url-pattern>/AreaCheckServlet</url-pattern>
     </servlet-mapping>
-
+    <welcome-file-list>
+        <welcome-file>Views/index.jsp</welcome-file>
+    </welcome-file-list>
 
 
 </web-app>

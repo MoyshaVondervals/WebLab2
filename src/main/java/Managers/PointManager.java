@@ -1,4 +1,6 @@
-package Points;
+package Managers;
+
+import Models.Point;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -22,5 +24,6 @@ public class PointManager implements Serializable {
             return "'green'";
         }return "'red'";
     }
+
 
 }

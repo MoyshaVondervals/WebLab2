@@ -5,10 +5,11 @@
   Time: 01:48
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="Points.Point" %>
-<%@ page import="Points.PointManager" %>
+<%@ page import="Models.Point" %>
+<%@ page import="Managers.PointManager" %>
+<%@ page import="Managers.PointManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% PointManager pointManager = (PointManager) session.getAttribute("pointManager"); %>
+<% PointManager pointDAO = (PointManager) session.getAttribute("pointManager"); %>
 <table>
   <thead>
   <tr>
@@ -17,8 +18,8 @@
     <td>R value</td>
     <td>Result</td>
   </tr>
-  <%if (pointManager!=null){
-    for(Point point : pointManager.getPointLinkedList()){
+  <%if (pointDAO !=null){
+    for(Point point : pointDAO.getPointLinkedList()){
   %>
   <tr>
     <td><%=point.getX()%></td>

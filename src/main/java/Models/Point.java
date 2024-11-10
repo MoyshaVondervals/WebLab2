@@ -1,4 +1,4 @@
-package Points;
+package Models;
 
 public class Point {
     private float x;
@@ -47,7 +47,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Points.Point{" +
+        return "Models.Point{" +
                 "x=" + x +
                 ", y=" + y +
                 ", r=" + r +

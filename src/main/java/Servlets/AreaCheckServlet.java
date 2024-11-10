@@ -2,8 +2,8 @@ package Servlets;
 
 import java.io.*;
 
-import Points.Point;
-import Points.PointManager;
+import Managers.PointManager;
+import Models.Point;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -21,7 +21,7 @@ public class AreaCheckServlet extends HttpServlet {
             inputX = Float.parseFloat(request.getParameter("x"));
             inputY = Float.parseFloat(request.getParameter("y"));
             inputR = Float.parseFloat(request.getParameter("r"));
-            System.err.println("MSG:  X"+inputX+" Y"+inputY+" R"+inputR);
+            System.err.println("AreaCheckServlet msg:  X"+inputX+" Y"+inputY+" R"+inputR);
 
         } catch (Exception e) {
             errorHandler();
@@ -36,7 +36,7 @@ public class AreaCheckServlet extends HttpServlet {
 
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/result.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Views/result.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
