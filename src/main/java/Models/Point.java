@@ -1,28 +1,21 @@
 package Models;
 
-public class Point {
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+
+@Setter
+@Getter
+public class Point implements Serializable {
     private Coordinates coordinates;
     private boolean status;
+    private int factorial;
 
-    public Point(Coordinates coordinates, boolean status) {
+    public Point(Coordinates coordinates, boolean status, int factorial) {
         this.coordinates = coordinates;
         this.status = status;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
+        this.factorial = factorial;
     }
 
     @Override
@@ -30,6 +23,7 @@ public class Point {
         return "Point{" +
                 "coordinates=" + coordinates +
                 ", status=" + status +
+                ", simple=" + factorial +
                 '}';
     }
 }

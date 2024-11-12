@@ -26,6 +26,7 @@
     <td><%=point.getCoordinates().getY()%></td>
     <td><%=point.getCoordinates().getR()%></td>
     <td><%=point.isStatus()%></td>
+    <td><%=point.getFactorial()%></td>
   </tr>
   <%}
   }%>

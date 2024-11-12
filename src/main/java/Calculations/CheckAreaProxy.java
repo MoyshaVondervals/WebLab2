@@ -14,7 +14,7 @@ public class CheckAreaProxy {
             pointManager.addPoint(point);
         }else {
             System.out.println("proxy no substitution");
-            pointManager.addPoint(new Point(new Coordinates(x, y, r), CheckArea.checkAreas(x, y, r)));
+            pointManager.addPoint(new Point(new Coordinates(x, y, r), CheckArea.checkAreas(x, y, r), Factorial.factorial(x, y)));
         }
     }
 }

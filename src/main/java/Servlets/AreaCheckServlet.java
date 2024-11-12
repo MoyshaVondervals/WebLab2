@@ -34,8 +34,10 @@ public class AreaCheckServlet extends HttpServlet {
             pointManager = new PointManager();
         }
         session.setAttribute("pointManager", pointManager);
+        long startTime = System.nanoTime();
         CheckAreaProxy.checkAreaProxy(pointManager, inputX, inputY, inputR);
-
+        long endTime = System.nanoTime();
+        System.out.println("time: "+(endTime - startTime));
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/Views/result.jsp");
